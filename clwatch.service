@@ -1,0 +1,7 @@
+[Unit]
+Description=Run clwatch
+
+[Service]
+Type=simple
+User=username
+ExecStart=/home/dir/scripts/./clwatch.sh

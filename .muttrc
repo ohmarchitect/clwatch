@@ -1,0 +1,19 @@
+#~/.mutt/muttrc
+# Change the next 7 lines appropriately.
+set imap_user = your.email.script@gmail.com
+set imap_pass = p455w0rD
+set smtp_url = smtps://your.email.script@gmail.com@smtp.gmail.com:465/
+set smtp_pass = p455w0rD
+set from = your.email.script@gmail.com
+set realname = "Your Email"
+set editor = 'vim -c "set spell spelllang=en_us"'
+ 
+# Don't let your firewall kill your idle connection.
+set imap_keepalive = 900
+ 
+# Do not copy sent mail. Gmail smtp already does this.
+set copy = no
+ 
+set folder = imaps://imap.gmail.com:993
+set spoolfile = +INBOX #or +[Gmail]/Important
+set postponed = +[Gmail]/Drafts
