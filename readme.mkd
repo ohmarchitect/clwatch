@@ -1,5 +1,5 @@
 # Clwatch - Bash Script for Automated Craigslist Searching Sent Via Email
-
+based on: http://www.zlabx.com/http:/www.zlabx.com/bash-scripts/parse-the-craigslist-stream/
 
 
 ### Install (For Arch Linux but other distros will work with little-to-no modification)
@@ -42,23 +42,38 @@ In general,
  - if you want to search different categories in craigslist instead of everything, edit the URL on line ~92
 
 #### Automating the bash script
-Method 1) This is the 'cheap' method (runs the script every 1000 seconds, but you must keep the terminal open):
+Method 1) This is the 'simple' method (runs the script every 1000 seconds, but you must keep the terminal open):
 `watch -n 1000 "/exact/path/to/./clwatch.sh"`
 
 Method 2) Using systemd / systemctl to automate the bash script
+
    step 1) Copy clwatch.sh to a folder where you keep scripts (I usually use ~/scripts/ )
+   
    step 2) Open clwatch.service and change:
+   
             `/home/dir/scripts` 
+            
            to the folder you put clwatch.sh in (make sure to keep the '/./clwatch.sh')
+           
    step 3) In clwatch.service, also change:
+   
             `username` to your linux user name
+            
    step 4) If you want, change the timer value in clwatch.timer (It's currently set at 15 minutes)
+   
    step 5) Copy clwatch.service and clwatch.timer to /etc/systemd/system/ (you might need to use sudo or su)
+   
    step 6) as root or using sudo, run:
+   
             `systemctl start clwatch.timer`
+            
            This starts the timer in your current environment
+           
            and
+           
             `systemctl enable clwatch.timer`
+            
            This make the timer start on boot.
+           
    step 7) If everything is working, your inbox will be full of craiglist ads about kittens and scuba. :)
 
