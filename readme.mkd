@@ -50,13 +50,10 @@ Method 2) Using systemd / systemctl to automate the bash script
    step 1) Copy clwatch.sh to a folder where you keep scripts (I usually use ~/scripts/ )
    
    step 2) Open clwatch.service and change:
-   
             `/home/dir/scripts` 
-            
            to the folder you put clwatch.sh in (make sure to keep the '/./clwatch.sh')
            
    step 3) In clwatch.service, also change:
-   
             `username` to your linux user name
             
    step 4) If you want, change the timer value in clwatch.timer (It's currently set at 15 minutes)
@@ -64,15 +61,10 @@ Method 2) Using systemd / systemctl to automate the bash script
    step 5) Copy clwatch.service and clwatch.timer to /etc/systemd/system/ (you might need to use sudo or su)
    
    step 6) as root or using sudo, run:
-   
             `systemctl start clwatch.timer`
-            
            This starts the timer in your current environment
-           
            and
-           
             `systemctl enable clwatch.timer`
-            
            This make the timer start on boot.
            
    step 7) If everything is working, your inbox will be full of craiglist ads about kittens and scuba. :)
