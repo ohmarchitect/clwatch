@@ -16,6 +16,9 @@ mkdir -p ${DIR} # Make the directoryi if it doesn't exist
 # Define Search terms - create as many or as little as you like!
 echo scuba >> ${DIR}/clwatch_search_terms_tmp.txt
 echo kittens >> ${DIR}/clwatch_search_terms_tmp.txt
+# Multiple search term example(make sure to use a plus sign in-between search terms):
+echo red+ferrari >> ${DIR}/clwatch_search_terms_tmp.txt
+
 
 # Define Locations to search (these are in the craigslist URL (EX: http://phoenix.craigslist.org)
 echo phoenix >> ${DIR}/clwatch_locations_tmp.txt
